@@ -20,7 +20,7 @@
 	flex-shrink: 0;
 	height: 8px;
 	width: 8px;
-	margin-left: 6px;
+	margin-left: 4px;
 }
 
 .notification-item.unread .unread-mark {
@@ -68,7 +68,7 @@
 }
 
 .notification-item .author-name {
-	margin-right: 6px;
+	margin-right: 4px;
 }
 
 .notification-item .action-message {
