@@ -80,6 +80,7 @@
 }
 
 .notification-item .timestamp {
+	display: inline-block;
 	color: var(--grayish-blue);
 	opacity: 0.6;
 	margin-top: 2px;
