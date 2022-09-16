@@ -27,15 +27,18 @@ export const NotificationItem = ({
 					</div>
 
 					<div>
-						<div>
-							<a
-								href={author.profileUrl}
-								className='author-name notification-item-link'
-							>
-								{author.fullname}
-							</a>
+						<div style={{ display: 'flex', alignItems: 'center' }}>
+							<p className='action-message'>
+								<a
+									href={author.profileUrl}
+									className='author-name notification-item-link'
+								>
+									{author.fullname}
+								</a>
+								{actionMessage}
 
-							<span className='action-message'>{actionMessage}</span>
+								<span className='unread-mark'></span>
+							</p>
 
 							{source.name ? (
 								<a
@@ -45,8 +48,6 @@ export const NotificationItem = ({
 									{source.name}
 								</a>
 							) : null}
-
-							<span className='unread-mark'></span>
 						</div>
 
 						<span className='timestamp'> {timestamp}</span>
