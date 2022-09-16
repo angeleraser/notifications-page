@@ -7,9 +7,9 @@
 	--light-grayish-blue-1: hsl(211, 68%, 94%);
 	--light-grayish-blue-2: hsl(205, 33%, 90%);
 	--very-dark-blue: hsl(224, 21%, 14%);
+	--blue: #0b3778;
 	--very-light-grayish-blue: hsl(210, 60%, 98%);
 	--white: hsl(0, 0%, 100%);
-
 	--text-medium: 500;
 	--text-bold: 800;
 	--font-family: 'Plus Jakarta Sans', sans-serif;
@@ -27,4 +27,10 @@ body {
 	min-height: 100vh;
 	min-width: 360px;
 	width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+	.app {
+		padding: 40px;
+	}
 }
