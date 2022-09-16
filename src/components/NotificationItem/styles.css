@@ -18,7 +18,7 @@
 	display: inline-block;
 	visibility: hidden;
 	flex-shrink: 0;
-	margin-left: 6px;
+	margin-bottom: 2px;
 	height: 8px;
 	width: 8px;
 }
@@ -69,13 +69,15 @@
 
 .notification-item .author-name {
 	margin-right: 8px;
+	font-size: 14px;
 }
 
 .notification-item .action-message {
 	color: var(--grayish-blue);
 	font-weight: var(--text-medium);
-	line-height: 1.5;
+	line-height: 1.2;
 	font-size: 16px;
+	margin-right: 6px;
 }
 
 .notification-item .timestamp {
@@ -93,5 +95,10 @@
 
 	.notification-item .timestamp {
 		margin-top: 6px;
+	}
+
+	.notification-item .author-name {
+		margin-right: 8px;
+		font-size: 16px;
 	}
 }

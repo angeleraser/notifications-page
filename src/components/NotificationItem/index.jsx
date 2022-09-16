@@ -27,12 +27,7 @@ export const NotificationItem = ({
 					</div>
 
 					<div>
-						<div
-							style={{
-								display: 'flex',
-								alignItems: 'center',
-							}}
-						>
+						<div>
 							<a
 								href={author.profileUrl}
 								className='author-name notification-item-link'
