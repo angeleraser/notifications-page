@@ -3,60 +3,95 @@
 	flex-direction: column;
 	width: 100%;
 	font-family: var(--font-family);
+	padding: 18px;
+	border-radius: 8px;
 }
 
-.notification-item a {
-	color: var(--dark-blue);
+.notification-item.unread {
+	background-color: var(--very-light-grayish-blue);
+}
+
+.notification-item .unread-mark {
+	background-color: var(--red);
+	border-radius: 50%;
+	content: '';
+	display: inline-block;
+	visibility: hidden;
+	flex-shrink: 0;
+	margin-left: 6px;
+	height: 8px;
+	width: 8px;
+}
+
+.notification-item.unread .unread-mark {
+	visibility: visible;
+}
+
+.notification-item-link {
+	color: var(--very-dark-blue);
 	text-decoration: none;
 	font-weight: var(--text-bold);
 }
 
-.notification-item a:hover {
+.notification-ref-link {
+	margin-left: 6px;
+	color: var(--grayish-blue);
+}
+
+.notification-item-link:hover {
 	color: var(--blue);
 }
 
-.notification-primary-content {
-	display: flex;
-	align-items: flex-start;
-}
-
-.notification-author-photo {
+.notification-item .author-avatar {
 	border-radius: 50%;
 	flex-shrink: 0;
 	height: 38px;
 	width: 38px;
 	margin-right: 14px;
+	overflow: hidden;
 }
 
-.notification-author-photo img {
-	border-radius: 50%;
+.notification-ref-photo {
+	border-radius: 8px;
+	flex-shrink: 0;
+	height: 40px;
+	margin-left: 20px;
+	overflow: hidden;
+	width: 40px;
+}
+
+.notification-item img {
 	height: 100%;
 	object-fit: cover;
 	width: 100%;
+	background-color: var(--light-grayish-blue-1);
 }
 
-.notification-author-name {
+.notification-item .author-name {
 	margin-right: 8px;
 }
 
-.notification-action-msg {
+.notification-item .action-message {
 	color: var(--grayish-blue);
 	font-weight: var(--text-medium);
+	line-height: 1.5;
+	font-size: 16px;
 }
 
-.notification-time {
+.notification-item .timestamp {
 	color: var(--grayish-blue);
 	opacity: 0.6;
 	margin-top: 2px;
+	font-size: 14px;
 }
 
 @media screen and (min-width: 768px) {
-	.notification-author-photo {
+	.notification-item .author-avatar {
 		height: 42px;
 		width: 42px;
 	}
 
-	.notification-time {
+	.notification-item .timestamp {
 		margin-top: 6px;
 	}
 }

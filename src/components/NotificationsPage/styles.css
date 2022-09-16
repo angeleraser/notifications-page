@@ -41,6 +41,10 @@
 	font-weight: var(--text-medium);
 }
 
+.mark-read-btn:hover {
+	color: var(--blue);
+}
+
 .notifications-list {
 	overflow-y: auto;
 	height: calc(100vh - 120px);

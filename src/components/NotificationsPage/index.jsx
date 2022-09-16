@@ -15,7 +15,36 @@ export const NotificationsPage = (props) => {
 			</header>
 
 			<main className='notifications-list'>
-				<NotificationItem />
+				<NotificationItem
+					author={{
+						fullname: 'Angel Figuera',
+						profileUrl: '#',
+						avatar: 'https://picsum.photos/202',
+					}}
+					source={{
+						url: '#',
+						name: '',
+						previewImg: 'https://picsum.photos/200',
+					}}
+					actionMessage={'reacted to your photo'}
+					timestamp='1 minute ago'
+					isUnread
+				/>
+
+				<NotificationItem
+					author={{
+						fullname: 'John Doe',
+						profileUrl: '#',
+						avatar: 'https://picsum.photos/205',
+					}}
+					source={{
+						url: '#',
+						name: '',
+						previewImg: 'https://picsum.photos/203',
+					}}
+					actionMessage={'reacted to your photo'}
+					timestamp='1 week ago'
+				/>
 			</main>
 		</section>
 	);

@@ -1,32 +1,72 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { classNames } from '../../utils/classNames';
 import './styles.css';
 
-export const NotificationItem = () => {
+const defaultAvatar =
+	'https://www.behrmancap.com/wp-content/uploads/2015/03/person-placeholder.jpg';
+
+export const NotificationItem = ({
+	author = {},
+	source = {},
+	isUnread = false,
+	actionMessage = '',
+	timestamp = '',
+}) => {
 	return (
-		<article className='notification-item'>
-			<main className='notification-primary-content'>
-				<div className='notification-author-photo'>
-					<img
-						src='https://www.mountsinai.on.ca/wellbeing/our-team/team-images/person-placeholder/image'
-						alt=''
-					/>
-				</div>
-
-				<div className='notification-primary-content-body'>
-					<div>
-						<a href='#' className='notification-author-name'>
-							Angel Figuera
-						</a>
-
-						<span className='notification-action-msg'>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-						</span>
+		<article className={`notification-item${classNames({ unread: isUnread })}`}>
+			<div
+				className='notification-item-content'
+				style={{ display: 'flex', alignItems: 'flex-start' }}
+			>
+				<section
+					style={{ display: 'flex', alignItems: 'flex-start', width: '100%' }}
+				>
+					<div className='author-avatar'>
+						<img src={author.avatar || defaultAvatar} alt='' />
 					</div>
 
-					<div className='notification-time'> 1m ago</div>
-				</div>
-			</main>
+					<div>
+						<div
+							style={{
+								display: 'flex',
+								alignItems: 'center',
+							}}
+						>
+							<a
+								href={author.profileUrl}
+								className='author-name notification-item-link'
+							>
+								{author.fullname}
+							</a>
+
+							<span className='action-message'>{actionMessage}</span>
+
+							{source.name ? (
+								<a
+									href={source.url}
+									className='notification-ref-link notification-item-link'
+								>
+									{source.name}
+								</a>
+							) : null}
+
+							<span className='unread-mark'></span>
+						</div>
+
+						<span className='timestamp'> {timestamp}</span>
+					</div>
+				</section>
+
+				{source.previewImg ? (
+					<a
+						href={source.url}
+						className='notification-ref-photo notification-item-link'
+					>
+						<img src={source.previewImg} alt='' />
+					</a>
+				) : null}
+			</div>
 		</article>
 	);
 };
