@@ -48,6 +48,7 @@
 .notifications-list {
 	overflow-y: auto;
 	height: calc(100vh - 120px);
+	padding-right: 8px;
 }
 
 .notifications-list > *:not(:last-child) {
