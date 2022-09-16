@@ -1,5 +1,6 @@
 import './styles.css';
 import React from 'react';
+import { NotificationItem } from '../NotificationItem';
 
 export const NotificationsPage = (props) => {
 	return (
@@ -14,12 +15,7 @@ export const NotificationsPage = (props) => {
 			</header>
 
 			<main className='notifications-list'>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-					provident tempora repudiandae delectus necessitatibus, illum
-					consequuntur vero, molestiae in itaque suscipit autem placeat
-					cupiditate soluta porro dolores rerum, quam velit!
-				</p>
+				<NotificationItem />
 			</main>
 		</section>
 	);
