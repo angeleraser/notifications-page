@@ -61,7 +61,9 @@ export const NotificationItem = ({
 			</section>
 
 			{children ? (
-				<section style={{ marginTop: 12 }}>{children}</section>
+				<section className='notification-content' style={{ marginTop: 12 }}>
+					{children}
+				</section>
 			) : null}
 		</article>
 	);

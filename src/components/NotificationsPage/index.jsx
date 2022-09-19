@@ -1,6 +1,7 @@
 import './styles.css';
 import React from 'react';
 import { NotificationItem } from '../NotificationItem';
+import { MessagePreview } from '../MessagePreview';
 
 const NotificationProps = {
 	author: {
@@ -14,7 +15,7 @@ const NotificationProps = {
 		previewImg: 'https://picsum.photos/200',
 	},
 	message: 'reacted to your photo',
-	unread: true,
+	unread: false,
 	stamp: '1 minute ago',
 };
 
@@ -32,10 +33,12 @@ export const NotificationsPage = (props) => {
 
 			<main className='notifications-list'>
 				<NotificationItem {...NotificationProps}>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eius
-					vero tempora libero optio quisquam nostrum iure dolores. Animi alias
-					ipsa earum tempore doloremque voluptate, tenetur ullam! Provident,
-					reprehenderit eligendi.
+					<MessagePreview>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
+						quo architecto praesentium. Neque nobis ipsum laborum tempora quae,
+						eveniet quam quas, dicta exercitationem consectetur, veniam a atque
+						nisi temporibus ex!
+					</MessagePreview>
 				</NotificationItem>
 			</main>
 		</section>

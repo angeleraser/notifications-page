@@ -1,0 +1,9 @@
+.message-preview {
+	font-size: 14px;
+	line-height: 1.4;
+	padding: 20px;
+	background-color: var(--white);
+	border-radius: 4px;
+	border: 1px solid var(--light-grayish-blue-2);
+	color: var(--dark-grayish-blue);
+}
