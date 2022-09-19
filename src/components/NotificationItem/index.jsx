@@ -8,61 +8,61 @@ const defaultAvatar =
 
 export const NotificationItem = ({
 	author = {},
-	source = {},
-	isUnread = false,
-	actionMessage = '',
-	timestamp = '',
+	context = {},
+	message = '',
+	stamp = '',
+	unread = false,
+	children,
 }) => {
 	return (
-		<article className={`notification-item${classNames({ unread: isUnread })}`}>
-			<div
-				className='notification-item-content'
-				style={{ display: 'flex', alignItems: 'flex-start' }}
-			>
-				<section
+		<article className={`notification${classNames({ unread })}`}>
+			<section style={{ display: 'flex', alignItems: 'flex-start' }}>
+				<div
 					style={{ display: 'flex', alignItems: 'flex-start', width: '100%' }}
 				>
-					<div className='author-avatar'>
+					<div className='avatar'>
 						<img src={author.avatar || defaultAvatar} alt='' />
 					</div>
 
 					<div>
 						<div style={{ display: 'flex', alignItems: 'center' }}>
-							<p className='action-message'>
-								<a
-									href={author.profileUrl}
-									className='author-name notification-item-link'
-								>
+							<p className='message'>
+								<a href={author.url} className='author-name notification-link'>
 									{author.fullname}
 								</a>
-								{actionMessage}
+
+								<span>{message}</span>
 
 								<span className='unread-mark'></span>
 							</p>
 
-							{source.name ? (
+							{context.name ? (
 								<a
-									href={source.url}
-									className='notification-ref-link notification-item-link'
+									href={context.url}
+									className='notification-context-link notification-link'
 								>
-									{source.name}
+									{context.name}
 								</a>
 							) : null}
 						</div>
 
-						<span className='timestamp'> {timestamp}</span>
+						<span className='stamp'> {stamp}</span>
 					</div>
-				</section>
+				</div>
 
-				{source.previewImg ? (
+				{context.previewImg ? (
 					<a
-						href={source.url}
-						className='notification-ref-photo notification-item-link'
+						href={context.url}
+						className='notification-preview-photo notification-link'
 					>
-						<img src={source.previewImg} alt='' />
+						<img src={context.previewImg} alt='' />
 					</a>
 				) : null}
-			</div>
+			</section>
+
+			{children ? (
+				<section style={{ marginTop: 12 }}>{children}</section>
+			) : null}
 		</article>
 	);
 };

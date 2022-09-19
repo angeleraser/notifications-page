@@ -1,4 +1,4 @@
-.notification-item {
+.notification {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -7,11 +7,11 @@
 	border-radius: 8px;
 }
 
-.notification-item.unread {
+.notification.unread {
 	background-color: var(--very-light-grayish-blue);
 }
 
-.notification-item .unread-mark {
+.notification .unread-mark {
 	background-color: var(--red);
 	border-radius: 50%;
 	content: '';
@@ -23,26 +23,26 @@
 	margin-left: 4px;
 }
 
-.notification-item.unread .unread-mark {
+.notification.unread .unread-mark {
 	visibility: visible;
 }
 
-.notification-item-link {
+.notification-link {
 	color: var(--very-dark-blue);
 	text-decoration: none;
 	font-weight: var(--text-bold);
 }
 
-.notification-ref-link {
+.notification-context-link {
 	margin-left: 6px;
 	color: var(--grayish-blue);
 }
 
-.notification-item-link:hover {
+.notification-link:hover {
 	color: var(--blue);
 }
 
-.notification-item .author-avatar {
+.notification .avatar {
 	border-radius: 50%;
 	flex-shrink: 0;
 	height: 38px;
@@ -51,7 +51,7 @@
 	overflow: hidden;
 }
 
-.notification-ref-photo {
+.notification-preview-photo {
 	border-radius: 8px;
 	flex-shrink: 0;
 	height: 40px;
@@ -60,18 +60,18 @@
 	width: 40px;
 }
 
-.notification-item img {
+.notification img {
 	height: 100%;
 	object-fit: cover;
 	width: 100%;
 	background-color: var(--light-grayish-blue-1);
 }
 
-.notification-item .author-name {
+.notification .author-name {
 	margin-right: 4px;
 }
 
-.notification-item .action-message {
+.notification .message {
 	color: var(--grayish-blue);
 	font-weight: var(--text-medium);
 	line-height: 1.2;
@@ -79,7 +79,7 @@
 	font-size: 14px;
 }
 
-.notification-item .timestamp {
+.notification .stamp {
 	display: inline-block;
 	color: var(--grayish-blue);
 	opacity: 0.6;
@@ -88,16 +88,16 @@
 }
 
 @media screen and (min-width: 768px) {
-	.notification-item .author-avatar {
+	.notification .avatar {
 		height: 42px;
 		width: 42px;
 	}
 
-	.notification-item .timestamp {
+	.notification .stamp {
 		margin-top: 6px;
 	}
 
-	.notification-item .action-message {
+	.notification .message {
 		font-size: 16px;
 	}
 }
