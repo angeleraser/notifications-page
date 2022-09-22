@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { useImage } from '../../hooks/useImage';
 import { classNames } from '../../utils/classNames';
 import './styles.css';
 
 const defaultAvatar =
-	'https://www.behrmancap.com/wp-content/uploads/2015/03/person-placeholder.jpg';
+	'https://john-mohamed.com/wp-content/uploads/2018/05/Profile_avatar_placeholder_large.png';
 
 export const NotificationItem = ({
 	author = {},
@@ -14,6 +15,8 @@ export const NotificationItem = ({
 	unread = false,
 	children,
 }) => {
+	const { imgSrc, isLoadingImg } = useImage(author.avatar);
+
 	return (
 		<article className={`notification${classNames({ unread })}`}>
 			<section style={{ display: 'flex', alignItems: 'flex-start' }}>
@@ -21,7 +24,11 @@ export const NotificationItem = ({
 					style={{ display: 'flex', alignItems: 'flex-start', width: '100%' }}
 				>
 					<div className='avatar'>
-						<img src={author.avatar || defaultAvatar} alt='' />
+						{isLoadingImg && !imgSrc ? (
+							<div className='avatar-skeleton'></div>
+						) : (
+							<img src={imgSrc ? imgSrc : defaultAvatar} alt='' />
+						)}
 					</div>
 
 					<div>

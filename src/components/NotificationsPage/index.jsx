@@ -1,13 +1,12 @@
 import './styles.css';
 import React from 'react';
 import { NotificationItem } from '../NotificationItem';
-import { MessagePreview } from '../MessagePreview';
 
 const NotificationProps = {
 	author: {
 		fullname: 'Angel Figuera',
 		url: '#',
-		avatar: 'https://picsum.photos/202',
+		avatar: '',
 	},
 	context: {
 		url: '#',
@@ -19,7 +18,7 @@ const NotificationProps = {
 	stamp: '1 minute ago',
 };
 
-export const NotificationsPage = (props) => {
+export const NotificationsPage = () => {
 	return (
 		<section className='notifications-page'>
 			<header className='notifications-page-header'>
@@ -32,14 +31,7 @@ export const NotificationsPage = (props) => {
 			</header>
 
 			<main className='notifications-list'>
-				<NotificationItem {...NotificationProps}>
-					<MessagePreview>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
-						quo architecto praesentium. Neque nobis ipsum laborum tempora quae,
-						eveniet quam quas, dicta exercitationem consectetur, veniam a atque
-						nisi temporibus ex!
-					</MessagePreview>
-				</NotificationItem>
+				<NotificationItem {...NotificationProps} />
 			</main>
 		</section>
 	);

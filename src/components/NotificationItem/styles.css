@@ -42,13 +42,27 @@
 	color: var(--blue);
 }
 
-.notification .avatar {
+.notification .avatar,
+.notification .avatar-skeleton {
 	border-radius: 50%;
 	flex-shrink: 0;
 	height: 38px;
 	width: 38px;
 	margin-right: 14px;
 	overflow: hidden;
+}
+
+.notification .avatar-skeleton {
+	animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+	0% {
+		background-color: hsl(200, 20%, 80%);
+	}
+	100% {
+		background-color: hsl(200, 20%, 95%);
+	}
 }
 
 .notification-preview-photo {
@@ -93,7 +107,8 @@
 }
 
 @media screen and (min-width: 768px) {
-	.notification .avatar {
+	.notification .avatar,
+	.notification .avatar-skeleton {
 		height: 42px;
 		width: 42px;
 	}
