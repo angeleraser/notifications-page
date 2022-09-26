@@ -27,7 +27,10 @@ export const NotificationItem = ({
 						{isLoadingImg && !imgSrc ? (
 							<div className='avatar-skeleton'></div>
 						) : (
-							<img src={imgSrc ? imgSrc : defaultAvatar} alt='' />
+							<img
+								src={imgSrc ? imgSrc : defaultAvatar}
+								alt={`${author.fullname} avatar`}
+							/>
 						)}
 					</div>
 
@@ -50,7 +53,7 @@ export const NotificationItem = ({
 								) : null}
 							</p>
 
-							<span className='unread-mark'></span>
+							<span aria-label='Unread mark' className='unread-mark'></span>
 						</div>
 
 						<span className='stamp'> {stamp}</span>
@@ -60,9 +63,10 @@ export const NotificationItem = ({
 				{context.previewImg ? (
 					<a
 						href={context.url}
+						aria-label='Notification preview image'
 						className='notification-preview-photo notification-link'
 					>
-						<img src={context.previewImg} alt='' />
+						<img src={context.previewImg} alt='Preview link' />
 					</a>
 				) : null}
 			</section>

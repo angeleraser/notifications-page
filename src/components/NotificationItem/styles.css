@@ -96,7 +96,6 @@
 .notification .stamp {
 	display: inline-block;
 	color: var(--grayish-blue);
-	opacity: 0.6;
 	margin-top: 2px;
 	font-size: 14px;
 }
