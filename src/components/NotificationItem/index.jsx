@@ -55,7 +55,7 @@ export const NotificationItem = ({
 
 							<span
 								role='strong'
-								aria-label='Unread mark'
+								aria-roledescription='Notification Unread mark'
 								className='unread-mark'
 							></span>
 						</div>
