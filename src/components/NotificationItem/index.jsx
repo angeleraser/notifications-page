@@ -40,17 +40,17 @@ export const NotificationItem = ({
 
 								<span>{message}</span>
 
-								<span className='unread-mark'></span>
+								{context.name ? (
+									<a
+										href={context.url}
+										className='notification-context-link notification-link'
+									>
+										{context.name}
+									</a>
+								) : null}
 							</p>
 
-							{context.name ? (
-								<a
-									href={context.url}
-									className='notification-context-link notification-link'
-								>
-									{context.name}
-								</a>
-							) : null}
+							<span className='unread-mark'></span>
 						</div>
 
 						<span className='stamp'> {stamp}</span>

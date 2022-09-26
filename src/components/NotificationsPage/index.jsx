@@ -1,37 +1,49 @@
 import './styles.css';
 import React from 'react';
 import { NotificationItem } from '../NotificationItem';
-
-const NotificationProps = {
-	author: {
-		fullname: 'Angel Figuera',
-		url: '#',
-		avatar: '',
-	},
-	context: {
-		url: '#',
-		name: '',
-		previewImg: 'https://picsum.photos/200',
-	},
-	message: 'reacted to your photo',
-	unread: false,
-	stamp: '1 minute ago',
-};
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { getNotifications } from '../../services/getNotifications';
 
 export const NotificationsPage = () => {
+	const [notifications, setNotifications] = useState([]);
+
+	const fetchNotifications = async () => {
+		const data = await getNotifications();
+
+		setNotifications(data);
+	};
+
+	useEffect(() => {
+		fetchNotifications();
+	}, []);
+
 	return (
 		<section className='notifications-page'>
 			<header className='notifications-page-header'>
 				<h1>
 					Notifications
-					<span className='notifications-unread-count'>3</span>
+					<span className='notifications-unread-count'>
+						{notifications.length}
+					</span>
 				</h1>
 
 				<button className='mark-read-btn'>Mark all as read</button>
 			</header>
 
 			<main className='notifications-list'>
-				<NotificationItem {...NotificationProps} />
+				{notifications.map((item) => {
+					return (
+						<NotificationItem
+							key={item.id}
+							author={item.author}
+							context={item.context}
+							message={item.message}
+							unread={item.unread}
+							stamp={item.stamp}
+						/>
+					);
+				})}
 			</main>
 		</section>
 	);
