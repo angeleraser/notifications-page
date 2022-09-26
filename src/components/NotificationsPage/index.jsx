@@ -4,6 +4,7 @@ import { NotificationItem } from '../NotificationItem';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getNotifications } from '../../services/getNotifications';
+import { MessagePreview } from '../MessagePreview';
 
 export const NotificationsPage = () => {
 	const [notifications, setNotifications] = useState([]);
@@ -40,7 +41,6 @@ export const NotificationsPage = () => {
 					Mark all as read
 				</button>
 			</header>
-
 			<main className='notifications-list'>
 				{notifications.map((item) => {
 					return (
@@ -51,7 +51,11 @@ export const NotificationsPage = () => {
 							message={item.message}
 							unread={item.unread}
 							stamp={item.stamp}
-						/>
+						>
+							{item.context.message ? (
+								<MessagePreview>{item.context.message}</MessagePreview>
+							) : null}
+						</NotificationItem>
 					);
 				})}
 			</main>

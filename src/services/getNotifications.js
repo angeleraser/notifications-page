@@ -42,12 +42,26 @@ const randomNotifications = [
 		context: {
 			url: '#',
 			name: '',
+			previewImg: null,
+			message:
+				'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis quasi suscipit impedit eos molestiae sed quidem.',
+		},
+		id: '3h',
+		message: 'sent you a message',
+		unread: true,
+		stamp: '2d ago',
+	},
+
+	{
+		context: {
+			url: '#',
+			name: '',
 			previewImg: getRandomImage(),
 		},
 		id: '4d',
 		message: 'commented on your picture',
-		unread: false,
-		stamp: '1d ago',
+		unread: true,
+		stamp: '2d ago',
 	},
 
 	{
@@ -58,7 +72,7 @@ const randomNotifications = [
 		},
 		id: '5e',
 		message: 'reacted to your recent post',
-		unread: false,
+		unread: true,
 		stamp: '2 weeks ago',
 	},
 
@@ -77,22 +91,13 @@ const randomNotifications = [
 	{
 		context: {
 			url: '#',
-			name: 'Chess Club',
+			name: '',
 			previewImg: null,
+			message:
+				'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis quasi suscipit impedit eos molestiae sed quidem.',
 		},
 		id: '7g',
-		message: 'left the group',
-		unread: false,
-		stamp: '2 weeks ago',
-	},
-
-	{
-		context: {
-			url: '#',
-			name: '',
-		},
-		id: '8h',
-		message: 'followed you',
+		message: 'sent you a message',
 		unread: false,
 		stamp: '2 weeks ago',
 	},
@@ -117,65 +122,6 @@ const randomNotifications = [
 		},
 		id: '10j',
 		message: 'commented on your picture',
-		unread: false,
-		stamp: '2 weeks ago',
-	},
-
-	{
-		context: {
-			url: '#',
-			name: '',
-			previewImg: getRandomImage(),
-		},
-		id: '11k',
-		message: 'commented on your picture',
-		unread: false,
-		stamp: '2 weeks ago',
-	},
-
-	{
-		context: {
-			url: '#',
-			name: '',
-		},
-		id: '12l',
-		message: 'followed you',
-		unread: false,
-		stamp: '2 weeks ago',
-	},
-
-	{
-		context: {
-			url: '#',
-			name: '',
-			previewImg: getRandomImage(),
-		},
-		id: '10m',
-		message: 'commented on your picture',
-		unread: false,
-		stamp: '2 weeks ago',
-	},
-
-	{
-		context: {
-			url: '#',
-			name: '',
-			previewImg: null,
-		},
-		id: '14j',
-		message: 'followed you',
-		unread: false,
-		stamp: '2 weeks ago',
-	},
-
-	{
-		context: {
-			url: '#',
-			name: '',
-			previewImg: null,
-		},
-		id: '15j',
-		message: 'followed you',
 		unread: false,
 		stamp: '2 weeks ago',
 	},
