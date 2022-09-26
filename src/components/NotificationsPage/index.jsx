@@ -10,8 +10,16 @@ export const NotificationsPage = () => {
 
 	const fetchNotifications = async () => {
 		const data = await getNotifications();
-
 		setNotifications(data);
+	};
+
+	const handleMarkAllAsRead = () => {
+		setNotifications(
+			notifications.map((item) => {
+				item.unread = false;
+				return item;
+			}),
+		);
 	};
 
 	useEffect(() => {
@@ -28,7 +36,9 @@ export const NotificationsPage = () => {
 					</span>
 				</h1>
 
-				<button className='mark-read-btn'>Mark all as read</button>
+				<button onClick={handleMarkAllAsRead} className='mark-read-btn'>
+					Mark all as read
+				</button>
 			</header>
 
 			<main className='notifications-list'>
