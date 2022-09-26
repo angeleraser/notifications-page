@@ -53,10 +53,21 @@ export const NotificationItem = ({
 								) : null}
 							</p>
 
-							<span aria-label='Unread mark' className='unread-mark'></span>
+							<span
+								role='strong'
+								aria-label='Unread mark'
+								className='unread-mark'
+							></span>
 						</div>
 
-						<span className='stamp'> {stamp}</span>
+						<span
+							role='time'
+							aria-label='Notification time stamp'
+							className='stamp'
+						>
+							{' '}
+							{stamp}
+						</span>
 					</div>
 				</div>
 
